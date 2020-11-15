@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <title>Semaforos</title>
+</head>
+<body>
+
+<div class="actions">
+    <div class="tooltip-wrapper">
+        <input type="file"  accept="image/*" name="image" id="file" style="display: none;">
+        <label for="file" class="tooltip-trigger"><span class="material-icons">add_photo_alternate</span></label>
+        <div class="tooltip hide">
+            Subir imagen
+        </div>
+    </div>
+    <div class="tooltip-wrapper">
+        <button id="btnDraw" class="tooltip-trigger"><span class="material-icons">edit</span></button>
+        <div class="tooltip hide">
+            Dibujar polígonos
+        </div>
+    </div>
+    <div class="tooltip-wrapper">
+        <button id="btnResize" class="tooltip-trigger"><span class="material-icons">transform</span></button>
+        <div class="tooltip hide">
+            Editar polígonos
+        </div>
+    </div>
+    <div class="tooltip-wrapper">
+        <button id="btnDelete" class="tooltip-trigger" disabled><span class="material-icons">delete_outline</span></button>
+        <div class="tooltip hide">
+            Borrar polígono
+        </div>
+    </div>
+
+</div>
+<div class="form-group">
+    <label for="imageOpacity">Transparencia de la imagen:</label>
+    <input type="range" id="imageOpacity" class="slider" name="imageOpacity" min="0" max="10" value="10">
+</div>
+
+<div id="canvasContainer"></div>
+
+
+    <script src="./bundle.js"></script>
+</body>
+</html>
