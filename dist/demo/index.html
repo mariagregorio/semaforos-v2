@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../splide.min.css">
+    <link rel="stylesheet" type="text/css" href="../index.css">
+    <title>Semáforos Demo</title>
+    <script>var demo = true;</script>
+</head>
+<body>
+
+<div id="secondScreen" class="hide">
+    <div class="tooltip-wrapper">
+        <a href="../new" id="btnBackToDrawingScreen" class="tooltip-trigger btn"><span class="material-icons">keyboard_backspace</span></a>
+        <div class="tooltip hide">
+            Atrás
+        </div>
+    </div>
+    <div class="row">
+        <div class="col1">
+            <div id="secondScreenWrapper">
+                <div id="canvasContainer2"></div>
+            </div>
+        </div>
+        <div class="col2">
+            <div class="card" id="infoCard">
+                <div class="title">Unidades</div>
+                <div class="text">Seleccione una unidad para ver más información aquí.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalWrapper" class="hide">
+    <div class="overlay" id="modalOverlay"></div>
+    <div class="modal">
+        <div class="header">
+            <ul>
+                <li><button class="tab active" data-tab-name="fotos">Fotos</button></li>
+                <li><button class="tab"  data-tab-name="datos">Datos</button></li>
+                <li><button class="tab" data-tab-name="recorrido">Recorrido 360</button></li>
+                <li><button class="tab" data-tab-name="video">Video</button></li>
+                <li><button class="tab" data-tab-name="contacto">Contacto</button></li>
+            </ul>
+            <div>
+                <button class="btn-close" id="closeModalBtn"><span class="material-icons">clear</span></button>
+            </div>
+        </div>
+        <div class="body" id="modalBody">
+            <div class="tab-content splide active" data-tab-name="fotos">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <img src="../img/test_image1.jpg" alt="">
+                        </li>
+                        <li class="splide__slide">
+                            <img src="../img/test_image2.jpg" alt="">
+                        </li>
+                        <li class="splide__slide">
+                            <img src="../img/test_image3.jpg" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-content" data-tab-name="datos">
+                Datos
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                </ul>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
+                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+            </div>
+            <div class="tab-content" data-tab-name="recorrido">
+                <div class="video-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1612405112387!6m8!1m7!1sCAoSLEFGMVFpcE5yaXFqckgzZWp4cHlrUzc4MFhmVTFRWVpIU0N2QVg4T0R5WWVK!2m2!1d45.526810334878!2d-73.574985464122!3f266.4728590333326!4f8.08161740376633!5f0.7820865974627469" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </div>
+            <div class="tab-content" data-tab-name="video">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/klZNNUz4wPQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="tab-content" data-tab-name="contacto">Contacto</div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../bundle.js"></script>
+
+</body>
+</html>

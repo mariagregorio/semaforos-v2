@@ -34,6 +34,9 @@
     "webpack-cli": "^4.2.0"
   },
   "dependencies": {
-    "konva": "^7.1.4"
+    "@splidejs/splide": "^2.4.21",
+    "colorjoe": "^4.1.1",
+    "konva": "^7.1.4",
+    "quill": "^1.3.6"
   }
 }

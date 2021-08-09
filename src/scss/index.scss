@@ -6,11 +6,27 @@ body {
   background: $dark;
   padding: 2rem;
 }
+.hide {
+  display: none !important;
+}
+.show {
+  display: block;
+}
+#secondScreenWrapper,
+#drawingScreenCanvasWrapper {
+  width: 100%;
+  overflow: hidden;
+}
 #canvasContainer {
   margin-top: 2rem;
 }
-#canvasContainer .konvajs-content{
+#canvasContainer .konvajs-content,
+#canvasContainer2 .konvajs-content {
   margin: auto;
+}
+
+#polygonSelectedToolbar {
+  margin-top: 0;
 }
 
 .form-group {
@@ -24,7 +40,7 @@ body {
 .tooltip-wrapper {
   display: inline-block;
   position: relative;
-  .tooltip {
+  .tooltip-item {
     display: block;
     position: absolute;
     top: 50px;
@@ -38,12 +54,17 @@ body {
     line-height: 1;
     transition: all .3s;
     font-size: .9rem;
-  }
-  .tooltip.hide {
-    display: none;
+    &.hide {
+      display: none;
+    }
   }
 }
-
+.text-center {
+  text-align: center;
+}
+.margin-top-2 {
+    margin-top: 2rem;
+}
 .btn {
   border: 0;
   padding: .5rem 1rem;
@@ -52,17 +73,28 @@ body {
   border-radius: 0;
   cursor: pointer;
   transition: all .3s;
+  font-family: 'Ubuntu', sans-serif;
+  background: $light;
+  color: $dark;
+  &.btn-lg {
+    font-size: 1.2rem;
+    padding: 1rem 1.5rem;
+  }
   &.btn-primary {
     color: $light;
     background: $primary;
+    &:hover {
+      background: $primary-dark;
+    }
   }
   &:hover {
-    background: $primary-dark;
+    background: $light2;
   }
 }
 
 .actions {
   margin-top: 2rem;
+  margin-bottom: 2rem;
   text-align: center;
   line-height: 0;
   label {
@@ -84,16 +116,29 @@ body {
     height: 40px;
     text-align: center;
     line-height: 0;
+    &#btnDelete {
+      color: $light;
+      background: $red;
+      &:hover {
+        background: $red2;
+      }
+    }
     &:hover {
       background: $light2;
     }
     &.active {
       color: $light;
       background: $primary;
+      svg {
+        fill: $light;
+      }
       &:hover {
         color: $light;
         background: $primary-dark;
       }
+    }
+    svg {
+      fill: $dark;
     }
   }
   button:disabled {
@@ -105,9 +150,166 @@ body {
   }
 }
 
+.card {
+  background: $light2;
+  color: $dark;
+  padding: 2rem 1.5rem;
+  .title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+}
+
+#secondScreen {
+  .row {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 2rem;
+    .col1 {
+      width: 80%;
+    }
+    .col2 {
+      width: 20%;
+      padding-left: 1rem;
+    }
+  }
+}
+
+.tab-content {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
 
 
+#modalWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1001;
+    background: $dark;
+    opacity: .5;
+  }
+  .modal {
+    width: 85%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1002;
+    background: $light;
+    font-family: 'Ubuntu', sans-serif;
+    .header {
+      display: flex;
+      justify-content: space-between;
+      .btn-close {
+        padding: 1rem;
+        border: 0;
+        background: $light;
+        color: $dark;
+        cursor: pointer;
+        transition: all .2s;
+        &:hover {
+          color: $dark2;
+        }
+      }
+      ul {
+        display: flex;
+        justify-content: flex-start;
+        list-style-type: none;
+        li {
+          .tab {
+            padding: 1rem 2rem;
+            margin-right: .5rem;
+            border: 0;
+            font-weight: 500;
+            font-size: 1rem;
+            background: $light;
+            color: $dark2;
+            font-family: 'Ubuntu', sans-serif;
+            cursor: pointer;
+            transition: all .2s;
+            border-bottom: 2px solid $light;
+            outline: 0;
+            &.active {
+              border-bottom: 2px solid $primary;
+            }
+            &:hover {
+              border-bottom: 2px solid $dark;
+            }
+          }
+        }
+      }
+    }
+    .body {
+      margin: 2rem;
+      font-weight: 300;
+      color: $dark;
+      height: calc(100vh - 220px);
+      overflow: hidden;
+      .splide {
+        .splide__slide{
+          height: calc(100vh - 220px - 4rem);
+          img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+            margin: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+    }
+  }
+}
 
+.splide__pagination {
+  bottom: -1.5rem;
+}
+.splide__pagination__page.is-active {
+  background: $dark;
+}
+.splide__arrow {
+  background: transparent;
+  svg {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+
+.video-container {
+  overflow: hidden;
+  position: relative;
+  width:100%;
+  iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+  }
+  &::after {
+     padding-top: 56.25%;
+     display: block;
+     content: '';
+  }
+}
 
 
 input[type=range].slider {
@@ -195,4 +397,50 @@ how to remove the virtical space around the range input in IE*/
     margin: 0;
     /*Edge starts the margin from the thumb, not the track as other browsers do*/
   }
+}
+
+
+
+#colorPickerTrigger,
+#hoverColorPickerTrigger {
+  padding: .5rem;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.toolbar-item {
+  margin-bottom: 1rem;
+  label {
+    display: block;
+  }
+  input {
+    width: 100%;
+  }
+}
+#textEditorDatos,
+#textEditorContacto {
+  height: 200px;
+  margin-bottom: 1rem;
+}
+#toolbarContenidoTrigger {
+  padding: 0 0 1rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  color: $primary;
+  &:hover {
+    color: $primary-dark;
+  }
+  .material-icons {
+    font-size: 28px;
+  }
+}
+
+#dropArea {
+  margin-bottom: 1rem;
+}
+#btnFinalizar {
+  margin-bottom: 1rem;
 }

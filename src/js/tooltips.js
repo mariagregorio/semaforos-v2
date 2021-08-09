@@ -3,7 +3,7 @@ const tooltips = Array.from(document.querySelectorAll('.tooltip-trigger'));
 export const startTooltips = () => {
     tooltips.forEach(el => {
         const tooltipWrapper = el.parentElement;
-        const tooltip = tooltipWrapper.querySelector('.tooltip');
+        const tooltip = tooltipWrapper.querySelector('.tooltip-item');
         el.addEventListener('mouseover', e => {
             tooltip.classList.remove('hide');
         });

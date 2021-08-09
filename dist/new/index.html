@@ -19,57 +19,40 @@
     <link rel="stylesheet" type="text/css" href="../index.css">
     <link rel="stylesheet" type="text/css" href="../nuevo.css">
     <title>Semaforos</title>
-    <script>var demo = false;</script>
+    <script>var demo = !1;</script>
 </head>
 <body>
-
 <body class="bg-light">
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-4">
             <div class="blog-card blog-card-blog">
-                <div class="blog-table">
-                    <h6 class="blog-category blog-text-success"><i class="far fa-newspaper"></i> Bienvenido</h6>
-                    <h4 class="blog-card-caption">
-                        Augusto Rocca
-                    </h4>
+                <div class="blog-table"><h6 class="blog-category blog-text-success"><i class="fa-newspaper far"></i>
+                    Bienvenido</h6> <h4 class="blog-card-caption"> Augusto Rocca </h4>
                     <div class="ftr">
-                        <div class="stats">
-                            <a href="#" id="btnLogout" class="btn btn-primary"><i class="fas fa-arrow-circle-left"></i> Salir</a>
-                        </div>
+                        <div class="stats"><a href="#" id="btnLogout" class="btn btn-primary"><i
+                                class="fa-arrow-circle-left fas"></i> Salir</a></div>
                     </div>
                 </div>
             </div>
             <div class="blog-card blog-card-blog hide" id="polygonSelectedToolbar">
-                <div class="blog-table">
-                    <h4 class="blog-card-caption" id="polygonSelectedToolbarTitle"></h4>
-                    <div id="polygonToolbarColor" class="toolbar-item">
-                        <p>Color</p>
+                <div class="blog-table"><h4 class="blog-card-caption" id="polygonSelectedToolbarTitle"></h4>
+                    <div id="polygonToolbarColor" class="toolbar-item"><p>Color</p>
                         <div id="colorPickerTrigger">
                             <div id="colorCode"></div>
-                            <span class="material-icons">
-                            colorize
-                            </span>
-                        </div>
-                        <div class="hide" style="text-align: center" id="polygonColorPickerWrapper">
-                        </div>
+                            <span class="material-icons"> colorize </span></div>
+                        <div class="hide" style="text-align:center" id="polygonColorPickerWrapper"></div>
                     </div>
-                    <div id="polygonToolbarHoverColor" class="toolbar-item">
-                        <p>Color Hover</p>
+                    <div id="polygonToolbarHoverColor" class="toolbar-item"><p>Color Hover</p>
                         <div id="hoverColorPickerTrigger">
                             <div id="hoverColorCode"></div>
-                            <span class="material-icons">
-                            colorize
-                            </span>
-                        </div>
-                        <div class="hide" style="text-align: center" id="polygonHoverColorPickerWrapper">
-                        </div>
+                            <span class="material-icons"> colorize </span></div>
+                        <div class="hide" style="text-align:center" id="polygonHoverColorPickerWrapper"></div>
                     </div>
                     <div id="polygonToolbarTransparency" class="toolbar-item"></div>
                     <div class="toolbar-item" id="polygonToolbarHoverText"></div>
-                    <div id="toolbarContenidoTrigger">
-                        <span>Contenido</span>
-                        <span class="material-icons" id="expandIcon">expand_more</span>
+                    <div id="toolbarContenidoTrigger"><span>Contenido</span> <span class="material-icons"
+                                                                                   id="expandIcon">expand_more</span>
                     </div>
                     <div id="toolbarContenidoWrapper" class="hide"></div>
                 </div>
@@ -79,39 +62,48 @@
             <div class="blog-card blog-card-blog">
                 <div id="drawingScreen">
                     <div class="actions">
-                        <div class="tooltip-wrapper">
-                            <input type="file" accept="image/*" name="image" id="file" style="display:none">
-                            <label for="file" class="tooltip-trigger"><span class="material-icons">add_photo_alternate</span></label>
-                            <div class="hide tooltip-item"> Subir imagen </div>
+                        <div class="tooltip-wrapper"><input type="file" accept="image/*" name="image" id="file"
+                                                            style="display:none"> <label for="file"
+                                                                                         class="tooltip-trigger"><span
+                                class="material-icons">add_photo_alternate</span></label>
+                            <div class="hide tooltip-item"> Subir imagen</div>
                         </div>
                         <div class="tooltip-wrapper">
-                            <button id="btnSelect" class="tooltip-trigger select-tool">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M4 0l16 12.279-6.951 1.17 4.325 8.817-3.596 1.734-4.35-8.879-5.428 4.702z"/></svg>
+                            <button id="btnSelect" class="select-tool tooltip-trigger">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                    <path d="M4 0l16 12.279-6.951 1.17 4.325 8.817L13.778 24l-4.35-8.879L4 19.823z"/>
+                                </svg>
                             </button>
-                            <div class="hide tooltip-item"> Seleccionar </div>
+                            <div class="hide tooltip-item"> Seleccionar</div>
                         </div>
                         <div class="tooltip-wrapper">
-                            <button id="btnDraw" class="tooltip-trigger"><span class="material-icons">edit</span></button>
-                            <div class="hide tooltip-item"> Dibujar </div>
+                            <button id="btnDraw" class="tooltip-trigger"><span class="material-icons">edit</span>
+                            </button>
+                            <div class="hide tooltip-item"> Dibujar</div>
                         </div>
                         <div class="tooltip-wrapper">
-                            <button id="btnResize" class="tooltip-trigger"><span class="material-icons">transform</span></button>
-                            <div class="hide tooltip-item"> Transformar </div>
+                            <button id="btnResize" class="tooltip-trigger"><span class="material-icons">transform</span>
+                            </button>
+                            <div class="hide tooltip-item"> Transformar</div>
                         </div>
                         <div class="tooltip-wrapper">
-                            <button id="btnDelete" class="tooltip-trigger" disabled><span class="material-icons">delete_outline</span></button>
-                            <div class="hide tooltip-item" id="deleteBtnTtip"> Eliminar </div>
+                            <button id="btnDelete" class="tooltip-trigger" disabled><span class="material-icons">delete_outline</span>
+                            </button>
+                            <div class="hide tooltip-item" id="deleteBtnTtip"> Eliminar</div>
                         </div>
                     </div>
                     <div id="drawingScreenCanvasWrapper">
                         <div id="canvasContainer"></div>
                     </div>
-                    <div class="margin-top-2 text-center"> <div class="btn btn-lg btn-primary" id="btnFinalizar">Finalizar</div> </div>
+                    <div class="margin-top-2 text-center">
+                        <div class="btn btn-lg btn-primary" id="btnFinalizar">Finalizar</div>
+                    </div>
                 </div>
                 <div id="secondScreen" class="hide">
                     <div class="tooltip-wrapper">
-                        <button id="btnBackToDrawingScreen" class="btn tooltip-trigger"><span class="material-icons">keyboard_backspace</span></button>
-                        <div class="hide tooltip"> Atrás </div>
+                        <button id="btnBackToDrawingScreen" class="btn tooltip-trigger"><span class="material-icons">keyboard_backspace</span>
+                        </button>
+                        <div class="hide tooltip"> Atrás</div>
                     </div>
                     <div class="row">
                         <div class="col1">
@@ -149,16 +141,17 @@
                                 </li>
                             </ul>
                             <div>
-                                <button class="btn-close" id="closeModalBtn"><span class="material-icons">clear</span></button>
+                                <button class="btn-close" id="closeModalBtn"><span class="material-icons">clear</span>
+                                </button>
                             </div>
                         </div>
                         <div class="body">
                             <div class="active splide tab-content" data-tab-name="fotos">
                                 <div class="splide__track">
                                     <ul class="splide__list">
-                                        <li class="splide__slide"> <img src="../img/test_image1.jpg" alt=""> </li>
-                                        <li class="splide__slide"> <img src="../img/test_image2.jpg" alt=""> </li>
-                                        <li class="splide__slide"> <img src="../img/test_image3.jpg" alt=""> </li>
+                                        <li class="splide__slide"><img src="../img/test_image1.jpg" alt=""></li>
+                                        <li class="splide__slide"><img src="../img/test_image2.jpg" alt=""></li>
+                                        <li class="splide__slide"><img src="../img/test_image3.jpg" alt=""></li>
                                     </ul>
                                 </div>
                             </div>
@@ -166,7 +159,9 @@
                             <div class="tab-content" data-tab-name="recorrido">Recorrido 360°</div>
                             <div class="tab-content" data-tab-name="video">
                                 <div class="video-container">
-                                    <iframe src="https://www.youtube.com/embed/klZNNUz4wPQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <iframe src="https://www.youtube.com/embed/klZNNUz4wPQ" frameborder="0"
+                                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
                                 </div>
                             </div>
                             <div class="tab-content" data-tab-name="contacto">Contacto</div>
@@ -179,11 +174,10 @@
 </div>
 <script src="../bundle.js"></script>
 <script>
-    window.onload = function() {
+  window.onload = function () {
       console.log(Semaforos.getPolygonsData())
-    }
+    };
 </script>
-
 </body>
 </body>
 </html>
